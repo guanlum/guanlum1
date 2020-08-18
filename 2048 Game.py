@@ -89,6 +89,3 @@ class Game:
 
 if __name__ == "__main__":
     Game().main_loop()
-×
-拖拽到此处
-图片将完成下载
