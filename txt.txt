@@ -1,0 +1,42 @@
+#问候
+
+import datetime
+
+day=datetime.datetime.now().day,'/',datetime.datetime.now().month,'/',datetime.datetime.now().year #只能使用print，否则乱码！
+
+hour=int(datetime.datetime.now().hour)
+if hour>0<6:
+	PAM='凌晨'
+	if hour>6<12:
+		PAM='早上'
+		if hour>12<17:
+		    PAM='中午'
+if hour>17<19:
+	PAM='傍晚'
+	if hour>19<0:
+		PAM='晚上'
+if hour>12:
+	hour=hour-12
+minute=datetime.datetime.now().minute
+
+from time import time,localtime,strftime
+x=localtime(time())
+week=strftime("%A",x)
+if week=='Monday':
+	week='星期一'
+	if week=='Tuesday':
+		week='星期二'
+		if week=='Wednesday':
+			week='星期三'
+			if week=='Thursday':
+				week='星期四'
+				if week=='Friday':
+					week='星期五'
+					if week=='Saturday':
+						week='星期六'
+						if week=='Sunday':
+							week='星期日'
+							if week=='weekend':
+								week='周末'
+
+print('现在是',PAM,'。','\n今天的日期是',datetime.datetime.now().day,'/',datetime.datetime.now().month,'/',datetime.datetime.now().year,',',week,'。\n时间为',hour,':',minute,'。')
